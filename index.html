@@ -8,63 +8,95 @@
     <title>Movie Tickets</title>
   </head>
   <body>
-    <h1>The Ghost of Blockbuster</h1>
+    <h1>Now Playing:</h1>
     <div class="container">
-
       <div class="row">
         <div class="col-md-4">
-          <img src="img/big-movie-poster.jpg" alt="a movie poster for big">
-          <form class="" >
-            <select class="form-control" id="movie1-time">
-            <option disabled selected value="">Time</option>
-              <option value="1">Matinee</option>
-              <option value="2">Evening</option>
-              <option value="2">Night</option>
-            </select>
-            <select class="form-control" id="movie1-age">
-            <option disabled selected value="">Age</option>
-              <option value="1">Child (0-12)</option>
-              <option value="3">Adult (13-65)</option>
-              <option value="2">Senior (65+)</option>
-            </select>
-            <button type="submit">Show Price</button>
-            <div id="show-price">
-
-            </div>
-          </form>
+          <img id="bigPic" src="img/big-movie-poster.jpg" alt="">
         </div>
         <div class="col-md-4">
-          <img src="img/jaws-movie-poster.jpg" alt="a movie poster for jaws">
-          <select class="form-control" id="movie2-time">
-          <option disabled selected value="">Time</option>
-            <option value="1">Matinee</option>
-            <option value="2">Evening</option>
-            <option value="2">Night</option>
-          </select>
-          <select class="form-control" id="movie2-age">
-          <option disabled selected value="">Age</option>
-            <option value="1">Child (0-12)</option>
-            <option value="3">Adult (13-65)</option>
-            <option value="2">Senior (65+)</option>
-          </select>
+          <img id="jawsPic" src="img/jaws-movie-poster.jpg" alt="">
         </div>
         <div class="col-md-4">
-          <img src="img/ghost-movie-poster.jpg" alt="a movie poster for ghost">
-          <select class="form-control" id="movie3-time">
-          <option disabled selected value="">Time</option>
-            <option value="1">Matinee</option>
-            <option value="2">Evening</option>
-            <option value="2">Night</option>
-          </select>
-          <select class="form-control" id="movie3-age">
-          <option disabled selected value="">Age</option>
-            <option value="1">Child (0-12)</option>
-            <option value="3">Adult (13-65)</option>
-            <option value="2">Senior (65+)</option>
-          </select>
+          <img id="bigPic" src="img/ghost-movie-poster.jpg" alt="">
         </div>
       </div>
     </div>
+    <div class="container">
+      <form id="tickets">
+        <div class="row">
+          <div class="col-md-12">
+            Select Movie
+            <div class="radio">
+              <label>
+                <input type="radio" name="movie" id="big" value=1>
+                Big
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="movie" id="jaws" value=1>
+                Jaws
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="movie" id="ghost" value=1>
+                Ghost
+              </label>
+            </div>
+          </div>
 
+          <div class="col-md-12">
+            Select Showtime
+            <div class="radio">
+              <label>
+                <input type="radio" name="showTime" id="matinee" value=1>
+                Matinee
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="showTime" id="evening" value=2>
+                Evening/Night
+              </label>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            Select Age Range
+            <div class="radio">
+              <label>
+                <input type="radio" name="age" id="child" value=1>
+                Child (0-12)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="age" id="adult" value=2>
+                Adult (13-65)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="age" id="senior" value=1>
+                Senior (65+)
+              </label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-info btn-sm">Show Price</button>
+      </form>
+    </div>
+
+    <div id="priceOne">
+            <h3>$7</h3>
+        </div>
+        <div id="priceTwo">
+            <h3>$8</h3>
+        </div>
+        <div id="priceThree">
+            <h3>$10</h3>
+        </div>
   </body>
 </html>

@@ -1,31 +1,45 @@
 //Business Logic for Ticket
-function Ticket(basePrice, time, age)  {
-  this.price = basePrice,
+function Ticket(movie, time, age)  {
+  this.movie = movie,
   this.time = time,
   this.age = age
 }
 
-Ticket.prototype.ticketPrice = function(time, age) {
-  this.price = 5 + time + age;
-  console.log(Ticket.ticketPrice());
-}
+Ticket.prototype.priceShow = function (ticketPrice) {
+  if (ticketPrice.movie + ticketPrice.time + ticketPrice.age < 4 ) {
+    $("#priceOne").show();
+    $("#priceTwo").hide();
+    $("#priceThree").hide();
+    $('html, body').animate({scrollTop:$(document).height()}, 'slow');
 
+  }
+  else if (ticketPrice.movie + ticketPrice.time + ticketPrice.age === 4) {
+  $("#priceTwo").show();
+  $("#priceOne").hide();
+  $("#priceThree").hide();
+  $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+
+  }
+  else if (ticketPrice.movie + ticketPrice.time + ticketPrice.age > 4) {
+  $("#priceThree").show();
+  $("#priceOne").hide();
+  $("#priceTwo").hide();
+  $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+
+  }
+}
 //Front-End
-function showPrice(movie1Price) {
-  $("#show-price").show();
+var ticket = new Ticket();
 
 $(document).ready(function() {
-  $("form#new-contact").submit(function(event){
+  $("form#tickets").submit(function(event) {
     event.preventDefault();
-    var movie1Time = parseInt($("#movie1-time").val());
-    var movie1Age = parseInt($("movie1-age").val());
-    // var movie2Time = parseInt($("#movie2-time").val());
-    // var movie2Age = parseInt($("movie2-age").val());
-    // var movie3Time = parseInt($("#movie3-time").val());
-    // var movie3Age = parseInt($("movie3-age").val());
-    var basePrice = 5
-    var movie1Price = new Ticket(basePrice, movie1Time, movie1Age)
-    // var movie2Price = new Ticket(basePrice, movie2Time, movie2Age)
-    // var movie3Price = new Ticket(basePrice, movie3Time, movie3Age)
+    var userMovie = parseInt($("input:radio[name=movie]:checked").val());
+    var userTime = parseInt($("input:radio[name=showTime]:checked").val());
+    var userAge = parseInt($("input:radio[name=age]:checked").val());
+    var ticketPrice = new Ticket(userMovie, userTime, userAge);
+    console.log(ticketPrice)
+    ticket.priceShow(ticketPrice);
+    $('input[type="radio"]').prop('checked', false); 
   });
 });
