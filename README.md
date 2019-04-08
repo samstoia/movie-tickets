@@ -3,7 +3,7 @@
 This app simulates a website for a movie theater, and lets users see how much their movie ticket will cost based on time and age.
 
 ## Setup/Installation Requirements
-using command line, clone github repo by typing: git clone https://github.com/samstoia/transportation
+using command line, clone github repo by typing: git clone https://github.com/samstoia/movie-tickets
 find the file on your computer
 open the desired html file in your browser.
 ## Known Bugs
